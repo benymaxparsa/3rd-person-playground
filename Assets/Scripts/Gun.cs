@@ -14,9 +14,6 @@ public class Gun : MonoBehaviour
     private int _damage = 1;
 
     [SerializeField]
-    private Transform _firePoint;
-
-    [SerializeField]
     private ParticleSystem _muzzleParticle;
 
     [SerializeField]
@@ -39,12 +36,14 @@ public class Gun : MonoBehaviour
 
     private void FireGun()
     {
-        //Debug.DrawRay(_firePoint.position, _firePoint.forward * 100, Color.red, 2f);
-
+        
         _muzzleParticle.Play();
         _gunFireSource.Play();
 
-        Ray ray = new Ray(_firePoint.position, _firePoint.forward);
+        Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
+
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 2f);
+
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo, 100))

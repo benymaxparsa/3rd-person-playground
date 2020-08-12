@@ -9,9 +9,13 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
 
     [SerializeField]
-    private float _moveSpeed = 100;
+    private float _forwardMoveSpeed = 7.5f;
+
     [SerializeField]
-    private float _turnSpeed = 5f;
+    private float _backwardMoveSpeed = 3;
+
+    [SerializeField]
+    private float _turnSpeed = 150f;
 
     private void Awake()
     {
@@ -25,14 +29,15 @@ public class PlayerMovement : MonoBehaviour
         var vertical = Input.GetAxis("Vertical");
 
         var movement = new Vector3(horizontal, 0, vertical);
-        _characterController.SimpleMove(movement * Time.deltaTime * _moveSpeed);
 
-        _animator.SetFloat("Speed", movement.magnitude);
+        _animator.SetFloat("Speed", vertical);
 
-        if (movement.magnitude > 0)
+        transform.Rotate(Vector3.up, horizontal * _turnSpeed * Time.deltaTime);
+
+        if (vertical != 0)
         {
-            Quaternion newDirection = Quaternion.LookRotation(movement);
-            transform.rotation = Quaternion.Slerp(transform.rotation, newDirection, Time.deltaTime * _turnSpeed);
+            float moveSpeedToUse = vertical > 0 ? _forwardMoveSpeed : _backwardMoveSpeed;
+            _characterController.SimpleMove(transform.forward * moveSpeedToUse * vertical);
         }
 
     }
