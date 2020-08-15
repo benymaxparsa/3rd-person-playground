@@ -3,17 +3,17 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private NavMeshAgent _navMeshAgent;
-    private Animator _animator;
-    private AggroDetection _aggroDetection;
+    private NavMeshAgent navMeshAgent;
+    private Animator animator;
+    private AggroDetection aggroDetection;
     private Transform target;
 
     private void Awake()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _animator = GetComponentInChildren<Animator>();
-        _aggroDetection = GetComponent<AggroDetection>();
-        _aggroDetection.OnAggro += AggroDetection_OnAggro;
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
+        aggroDetection = GetComponent<AggroDetection>();
+        aggroDetection.OnAggro += AggroDetection_OnAggro;
     }
 
     private void AggroDetection_OnAggro(Transform target)
@@ -25,12 +25,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if (target != null)
         {
-            _navMeshAgent.SetDestination(target.position);
+            navMeshAgent.SetDestination(target.position);
 
-            float currentSpeed = _navMeshAgent.velocity.magnitude;
-            _animator.SetFloat("Speed", currentSpeed);
+            float currentSpeed = navMeshAgent.velocity.magnitude;
+            animator.SetFloat("Speed", currentSpeed);
         }
 
-        
+
     }
 }

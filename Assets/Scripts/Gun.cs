@@ -4,28 +4,28 @@ public class Gun : MonoBehaviour
 {
     [SerializeField]
     [Range(0.1f, 1.5f)]
-    private float _fireRate = 0.3f;
+    private float fireRate = 0.3f;
 
     [SerializeField]
     [Range(1, 10)]
-    private int _damage = 1;
+    private int damage = 1;
 
     [SerializeField]
-    private ParticleSystem _muzzleParticle;
+    private ParticleSystem muzzleParticle;
 
     [SerializeField]
-    private AudioSource _gunFireSource;
+    private AudioSource gunFireSource;
 
-    private float _timer;
+    private float timer;
 
     void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer >= _fireRate)
+        timer += Time.deltaTime;
+        if (timer >= fireRate)
         {
             if (Input.GetButton("Fire1"))
             {
-                _timer = 0f;
+                timer = 0f;
                 FireGun();
             }
         }
@@ -34,8 +34,8 @@ public class Gun : MonoBehaviour
     private void FireGun()
     {
 
-        _muzzleParticle.Play();
-        _gunFireSource.Play();
+        muzzleParticle.Play();
+        gunFireSource.Play();
 
         Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
 
@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
 
             if (health != null)
             {
-                health.TakeDamage(_damage);
+                health.TakeDamage(damage);
             }
         }
 

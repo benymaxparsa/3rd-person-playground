@@ -3,20 +3,20 @@
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private int _startingHealth = 5;
+    private int startingHealth = 5;
 
-    private int _currentHealth;
+    private int currentHealth;
 
     private void OnEnable()
     {
-        _currentHealth = _startingHealth;
+        currentHealth = startingHealth;
     }
 
     public void TakeDamage(int damageAmount)
     {
-        _currentHealth -= damageAmount;
+        currentHealth -= damageAmount;
 
-        if (_currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
