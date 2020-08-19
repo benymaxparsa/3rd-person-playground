@@ -42,7 +42,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 21.4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -70,7 +70,7 @@ ModelImporter:
       name: land
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 10
+      firstFrame: 22.4
       lastFrame: 26
       wrapMode: 0
       orientationOffsetY: 0
@@ -81,7 +81,7 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44807118, g: 0.4980824, b: 0.57552904, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 89b587046adb58e4a893f591c9364f21,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -199,11 +200,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670504543}
-  m_LocalRotation: {x: 0.0008199648, y: 0.988575, z: -0.15063293, w: 0.0053438153}
-  m_LocalPosition: {x: 5.099639, y: 1.3065611, z: 6.3815546}
+  m_LocalRotation: {x: -0.0020621917, y: -0.98162556, z: 0.1905278, w: -0.010308123}
+  m_LocalPosition: {x: -0.107001305, y: 1.3367265, z: 1.5335875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1551967693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887791770
@@ -234,15 +235,15 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.26
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: 2
+    m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -274,7 +275,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -291,12 +292,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887791770}
-  m_LocalRotation: {x: -0.003020688, y: 0.92199963, z: -0.38711235, w: -0.007185284}
-  m_LocalPosition: {x: 6.48421, y: 39.916878, z: 74.10584}
+  m_LocalRotation: {x: -0.68840593, y: -0.0050122635, z: 0.0047178837, w: -0.72529304}
+  m_LocalPosition: {x: 8.505862, y: 101.56881, z: 8.017231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &977830819
 PrefabInstance:
@@ -343,7 +344,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba705bae9defd004992f1208331f6033,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba705bae9defd004992f1208331f6033,
         type: 3}
@@ -402,7 +403,7 @@ Transform:
   m_Children:
   - {fileID: 1229498367}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229498366
 GameObject:
@@ -511,6 +512,7 @@ GameObject:
   - component: {fileID: 1551967693}
   - component: {fileID: 1551967692}
   - component: {fileID: 1551967691}
+  - component: {fileID: 1551967694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -546,7 +548,7 @@ Animator:
   m_GameObject: {fileID: 1551967690}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4291256d4b315b74c8bd3269761335a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -566,7 +568,32 @@ Transform:
   m_LocalPosition: {x: 5.1285753, y: 0.012, z: 4.51719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 670504546}
   - {fileID: 977830820}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551967694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551967690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caefd8cf6e9ad274d824845946fe4e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animations:
+    veticalVelocityFloat: Forward
+    horizontalVelocityFloat: Strafe
+    groundedBool: isGrounded
+    jumpBool: isJumping
+  physics:
+    gravityModifier: 9.81
+    baseGravity: 50
+    resetGravityValue: 1.2
+  movement:
+    jumpSpeed: 6
+    jumpTime: 0.25
