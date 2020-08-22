@@ -27,6 +27,7 @@ public class CameraRig : MonoBehaviour
         public float maxAngle = 70.0f;
         public float rotationSpeed = 5.0f;
         public float maxCheckDist = 0.1f;
+        public bool isCameraInverted = false; 
 
         [Header("-Zoom-")]
         public float fieldOfView = 70.0f;
@@ -143,7 +144,7 @@ public class CameraRig : MonoBehaviour
         newY += cameraSettings.mouseYSensitivity * Input.GetAxis(input.horizontalAxis);
 
         Vector3 eulerAngleAxis = new Vector3();
-        eulerAngleAxis.x = -newY;
+        eulerAngleAxis.x = (cameraSettings.isCameraInverted ? 1 : -1) * newY;
         eulerAngleAxis.y = newX;
 
         newX = Mathf.Repeat(newX, 360);

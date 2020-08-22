@@ -1110,6 +1110,7 @@ MonoBehaviour:
     maxAngle: 70
     rotationSpeed: 5
     maxCheckDist: 0.1
+    isCameraInverted: 0
     fieldOfView: 70
     zoomFieldOfView: 30
     zoomSpeed: 3
@@ -1133,6 +1134,7 @@ GameObject:
   - component: {fileID: 1551967692}
   - component: {fileID: 1551967691}
   - component: {fileID: 1551967694}
+  - component: {fileID: 1551967695}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1216,6 +1218,26 @@ MonoBehaviour:
   movement:
     jumpSpeed: 6
     jumpTime: 0.25
+--- !u!114 &1551967695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551967690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6762cc642ee5e340b868631f40c3355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input:
+    verticalAxis: Vertical
+    horizontalAxis: Horizontal
+    jumpButton: Jump
+  other:
+    lookSpeed: 5
+    lookDistance: 10
+    requireInputForTurn: 1
 --- !u!1 &1784382522
 GameObject:
   m_ObjectHideFlags: 0

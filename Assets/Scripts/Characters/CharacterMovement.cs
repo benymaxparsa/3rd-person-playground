@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -44,6 +41,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isJumping;
     private bool resetGravity;
     private float gravity;
+    private bool isGrounded = true;
 
     void Start()
     {
@@ -55,12 +53,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         ApplyGravity();
-        Animate(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
+        isGrounded = characterController.isGrounded;
     }
 
 
@@ -68,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
     {
         animator.SetFloat(animations.veticalVelocityFloat, forward);
         animator.SetFloat(animations.horizontalVelocityFloat, strafe);
-        animator.SetBool(animations.groundedBool, characterController.isGrounded);
+        animator.SetBool(animations.groundedBool, isGrounded);
         animator.SetBool(animations.jumpBool, isJumping);
     }
 
@@ -79,7 +72,7 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
 
-        if (characterController.isGrounded)
+        if (isGrounded)
         {
             isJumping = true;
             StartCoroutine(StopJump());
