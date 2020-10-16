@@ -5,7 +5,7 @@ public class UserInput : MonoBehaviour
     private CharacterMovement characterMove;
 
     [System.Serializable]
-    public class InputSettings
+    public class InputSettings                             // Settings of input
     {
         public string verticalAxis = "Vertical";
         public string horizontalAxis = "Horizontal";
@@ -15,7 +15,7 @@ public class UserInput : MonoBehaviour
     private InputSettings input;
 
     [System.Serializable]
-    public class OtherSettings
+    public class OtherSettings                          // Other settings related to input
     {
         public float lookSpeed = 5.0f;
         public float lookDistance = 10.0f;
@@ -26,7 +26,7 @@ public class UserInput : MonoBehaviour
 
     private Camera mainCam;
 
-    void Start()
+    void Start()               // Set objs
     {
         characterMove = GetComponent<CharacterMovement>();
         mainCam = Camera.main;
@@ -34,7 +34,7 @@ public class UserInput : MonoBehaviour
 
     void Update()
     {
-        if (characterMove)
+        if (characterMove)               // Animate character while moving
         {
 
             characterMove.Animate(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
@@ -45,7 +45,7 @@ public class UserInput : MonoBehaviour
             }
         }
 
-        if (mainCam)
+        if (mainCam)        // move camera while moving
         {
             if (other.requireInputForTurn)
             {

@@ -60,8 +60,9 @@ public class CameraRig : MonoBehaviour
     [SerializeField]
     public MovementSettings movement;
 
-    private Transform pivot;
-    private Camera mainCamera;
+    public Camera mainCamera { get; protected set; }
+    public Transform pivot { get; set; }
+
     private float newX = 0.0f;
     private float newY = 0.0f;
 
